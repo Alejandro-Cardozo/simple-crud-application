@@ -1,13 +1,3 @@
-{{#each errors }}
-<div class="alert alert-danger alert-dismissible fade show" role="alert">
-    {{text}}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-
-{{/each}}
-
 <div class="col-md-6 mx-auto mt-3">
     <div class="card">
         <div class="card-header">
@@ -16,10 +6,13 @@
         <div class="card-body">
             <form action="/profile/new-file" method="POST">
                 <div class="form-group">
-                    <input type="text" name="title" autofocus class="form-control" placeholder="Title" required>
+                    <input type="text" name="title" value="{{title}}" autofocus class="form-control" placeholder="Title"
+                        required>
                 </div>
                 <div class="form-group">
-                    <textarea name="description" class="form-control" placeholder="Description" required></textarea>
+                    <textarea name="description" class="form-control" placeholder="Description" required>
+                        {{description}}
+                    </textarea>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary btn-block" type="submit">Save</button>
